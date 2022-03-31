@@ -1,0 +1,63 @@
+@import "./_variables.scss";
+@import "./_nav.scss";
+@import "./grid.scss";
+@import "./_button.scss";
+@import "./_orders.scss";
+@import "./_pricing.scss";
+@import "./_modal.scss";
+
+html,
+body,
+#root {
+  font-family: "phawk--font";
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg {
+  color: $icon-color;
+  cursor: pointer;
+}
+
+.App {
+  position: fixed;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  height: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
+}
+
+.pmonk-Section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.--grid-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 0 30px;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}

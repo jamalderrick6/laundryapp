@@ -1,0 +1,79 @@
+.laundry--pricingPage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        width: 500px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px 0 rgb(10 37 64 / 7%);
+        border: solid 1px #efeff3;
+        border-radius: 9px;
+
+        header{
+            height: 85px;
+            background-color: #635bff;
+            color: #fff;
+            font-size: 45px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 0 55px;
+            justify-content: center;
+        }
+
+        .body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 55px;
+            height: 100%;
+            row-gap: 40px;
+
+
+            .plan{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            .description{
+                font-size: 18px;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .price{
+                display: flex;
+                font-weight: 600;
+                span:nth-child(2){
+                    font-size: 8em;
+                    font-weight: 900;
+                }
+            }
+        }
+
+        .footer{
+            height: 55px;
+            background-color: #0a2540;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 10px;
+
+            .feature{
+                display: flex;
+                column-gap: 5px;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                svg{
+                    fill: #635bff;
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+    }
+}

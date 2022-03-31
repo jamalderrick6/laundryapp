@@ -1,0 +1,39 @@
+nav {
+  max-width: 1568px;
+  margin: 0 auto;
+  background-color: #635bff;
+  padding: 0 30px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+
+  header {
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    color: #fff;
+  }
+
+  .nav--links {
+    display: flex;
+    align-items: center;
+
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

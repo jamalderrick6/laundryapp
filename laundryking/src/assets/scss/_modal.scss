@@ -1,0 +1,77 @@
+.Modal {
+  width: 500px;
+  padding: 10px 30px;
+
+  .Header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .Content {
+    padding: 20px 0;
+  }
+
+  .Buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  &.add-product {
+    .Content {
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        .label--input {
+          display: flex;
+          flex-direction: column;
+          row-gap: 5px;
+
+          label {
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          input {
+            font-size: 14px;
+            height: 35px;
+            border-radius: 5px;
+            background-color: transparent;
+            padding: 5px;
+            outline: none;
+            border: 1px solid rgba(10, 37, 64, 0.5);
+          }
+
+          &.product_url {
+            grid-area: 2 / 1 / auto / span 2;
+          }
+        }
+
+        .label--switch {
+          display: flex;
+          column-gap: 5px;
+          align-items: center;
+
+          label {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .Buttons {
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

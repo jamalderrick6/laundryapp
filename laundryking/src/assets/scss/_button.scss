@@ -1,0 +1,84 @@
+$primary-background: #635bff;
+$primary-background--hover: #463de7;
+$border-radius: 9px;
+$button-color: #fff;
+
+.button--Primary {
+  height: 40px;
+  background-color: $primary-background;
+  color: $button-color;
+  border-radius: $border-radius;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  &:hover {
+    background-color: $primary-background--hover;
+  }
+}
+
+.Button__Arrow-Primary {
+  background-color: $primary-background;
+  color: $button-color;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  height: 30px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+
+  .Ico {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+
+    .HoverArrow {
+      stroke-width: 2px;
+      fill: none;
+    }
+
+    .HoverArrow__linePath {
+      opacity: 0;
+      transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    svg {
+      color: #fff;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #0a2540;
+    color: #fff;
+    border: none;
+
+    .Ico {
+      background-color: #fff;
+
+      svg {
+        color: #0a2540;
+      }
+
+      .HoverArrow__tipPath {
+        transform: translateX(3px);
+      }
+
+      .HoverArrow__linePath {
+        opacity: 1;
+      }
+    }
+  }
+}
