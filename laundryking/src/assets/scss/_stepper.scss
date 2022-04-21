@@ -1,0 +1,29 @@
+.Step-Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .step{
+        border-radius: 50%;
+        height: 65px;
+        width: 65px;
+        background-color: #635bff;
+        border: none;
+
+        svg{
+            color: #fff;
+        }
+
+        &.--active{
+            background-color: rgb(10 37 64 / 50%);
+        }
+    }
+}
+
+.Step-Content{
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgb(10 37 64 / 7%);
+    border: solid 1px #efeff3;
+    padding: 30px;
+}

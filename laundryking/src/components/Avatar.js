@@ -3,6 +3,12 @@ import React, { Component } from "react";
 
 export default class AvatarComponent extends Component {
   render() {
-    return <Avatar src={this.props.src} />;
+    return (
+      <Avatar
+        className="avatar"
+        style={this.props.style}
+        src={this.props.src}
+      />
+    );
   }
 }

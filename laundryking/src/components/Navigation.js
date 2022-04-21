@@ -32,9 +32,9 @@ export default class Navigation extends Component {
               </div>
             );
           })}
-          <div className="user--profile">
+          <Link to={routes.profile} className="user--profile">
             <AvatarComponent />
-          </div>
+          </Link>
         </div>
       </nav>
     );

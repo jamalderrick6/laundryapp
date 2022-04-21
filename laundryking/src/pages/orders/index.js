@@ -1,4 +1,6 @@
+import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers";
 import React, { Component } from "react";
+import { X } from "react-feather";
 import cellDetailsRenderer from "../../components/cellDetailsRenderer";
 import GridComponent from "../../components/Grid";
 
@@ -68,7 +70,31 @@ export default class OrdersPage extends Component {
           delivery_date: "2/02/2022 14:50",
         },
       ],
+      orderfields: [
+        { title: "Pickup Date", value: "" },
+        { title: "Phone Number", value: "" },
+        { title: "Pickup Location", value: "" },
+        { title: "Any notes?", value: "" }
+      ],
+      create_order_status: false
     };
+  }
+
+  triggerCreateOrder = () => {
+    let status = this.state.create_order_status
+
+    this.setState({
+      create_order_status: !status
+    })
+  }
+
+  handleChange = (e, index) => {
+    let copy_orderfields = [...this.state.orderfields]
+    copy_orderfields[index].value = e.target.value;
+
+    this.setState({
+      orderfields: copy_orderfields
+    })
   }
   render() {
     return (
@@ -76,7 +102,7 @@ export default class OrdersPage extends Component {
         <div className="orders--table">
           <header>
             <span className="heading">My Orders</span>
-            <button className="button--Primary">Create new Order</button>
+            <button onClick={this.triggerCreateOrder} className="button--Primary">Create new Order</button>
           </header>
 
           <div className="grid">
@@ -102,6 +128,36 @@ export default class OrdersPage extends Component {
             <button className="button--Primary">Click to Copy and Share</button>
           </div>
         </div>
+        {
+          this.state.create_order_status ? (
+            <div className="create--order">
+              <header>
+                <X onClick={this.triggerCreateOrder} />
+                <span>New Order</span>
+              </header>
+              <form onSubmit={this.handleSubmitOrder}>
+                <div className="form--wrapper">
+                  {
+                    this.state.orderfields.map((field, index) => {
+                      return (
+                        <div className={"field"} key={index}>
+                          <label>{field.title}</label>
+                          {index === 3 ? (
+                            <textarea name={field.name} value={field.value} onChange={(e) => this.handleChange(e, index)} />
+                          ) : (
+                            <input type="text" name={field.name} value={field.value} onChange={(e) => this.handleChange(e, index)} />
+
+                          )}
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+                <button type="submit" className="button--Primary">Create Order</button>
+              </form>
+            </div>
+          ) : ""
+        }
       </div>
     );
   }

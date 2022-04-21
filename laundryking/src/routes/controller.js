@@ -5,6 +5,7 @@ import routes from "./routes";
 import history from "./history";
 import OrdersPage from "../pages/orders";
 import PricingPage from "../pages/pricing";
+import ProfilePage from "../pages/profile";
 
 const pages = [
   {
@@ -16,6 +17,11 @@ const pages = [
     exact: true,
     path: routes.pricing,
     component: PricingPage,
+  },
+  {
+    exact: true,
+    path: routes.profile,
+    component: ProfilePage,
   },
 ];
 
